@@ -797,7 +797,7 @@ section {
     grid-template-columns: 80px 1fr;
     gap: var(--spacing-lg);
     padding: var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     background: var(--bg-card);
     border: var(--border-light);
     border-left: 4px solid transparent;
