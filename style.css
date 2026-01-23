@@ -855,6 +855,27 @@ section {
     color: var(--accent-color);
 }
 
+.pub-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.pub-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.pub-link i {
+    font-size: 0.85rem;
+}
+
 .view-more {
     text-align: center;
     margin-top: var(--spacing-2xl);
