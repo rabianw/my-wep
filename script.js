@@ -36,6 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
             // Update active class
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
+
+            // Close mobile menu after clicking
+            const navMenu = document.querySelector('.nav-menu');
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            }
         });
     });
 
