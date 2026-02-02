@@ -593,6 +593,21 @@ section {
     margin-bottom: var(--spacing-md);
 }
 
+/* Timeline Grid for side-by-side display */
+.timeline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    margin-top: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+    .timeline-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+}
+
 .timeline {
     margin-top: var(--spacing-2xl);
     margin-bottom: var(--spacing-xl);
