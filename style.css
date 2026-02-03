@@ -1550,6 +1550,121 @@ section {
     margin-top: var(--spacing-3xl);
 }
 
+/* ================================
+   Recent Conference Presentations
+   ================================ */
+
+.recent-conferences {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(99, 102, 241, 0.03) 100%);
+}
+
+.timeline-conferences {
+    max-width: 900px;
+    margin: var(--spacing-2xl) auto 0;
+    position: relative;
+}
+
+.timeline-year-group {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.timeline-year-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
+    border-radius: 12px;
+}
+
+.timeline-conf-item {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    padding-left: var(--spacing-md);
+}
+
+.timeline-conf-item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 30px;
+    bottom: -30px;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.1));
+}
+
+.timeline-conf-dot {
+    width: 24px;
+    height: 24px;
+    background: var(--bg-card);
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+    transition: all 0.3s ease;
+}
+
+.timeline-conf-item:hover .timeline-conf-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.6);
+}
+
+.timeline-conf-content {
+    flex: 1;
+    background: var(--bg-card);
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+    border: 2px solid rgba(99, 102, 241, 0.1);
+    transition: all 0.3s ease;
+}
+
+.timeline-conf-item:hover .timeline-conf-content {
+    transform: translateX(8px);
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+}
+
+.timeline-conf-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.4;
+}
+
+.timeline-conf-venue {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.timeline-conf-venue i {
+    color: var(--primary-color);
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.timeline-conf-date {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--text-tertiary);
+    font-size: 0.875rem;
+}
+
+.timeline-conf-date i {
+    color: var(--primary-light);
+}
+
 @media (max-width: 768px) {}
 
 @media (max-width: 480px) {
