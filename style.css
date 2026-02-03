@@ -1461,6 +1461,10 @@ section {
     background: linear-gradient(135deg, #f59e0b, #f97316);
 }
 
+.conference-badge.attending {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
 .conference-icon {
     width: 64px;
     height: 64px;
