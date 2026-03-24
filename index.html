@@ -222,99 +222,6 @@
         </div>
     </section>
 
-    <!-- Interested Journals Section -->
-    <style>
-        .journal-grid {
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: var(--spacing-lg); 
-            margin-top: var(--spacing-xl);
-        }
-        .journal-card {
-            background: var(--bg-primary); 
-            border-radius: 20px; 
-            padding: var(--spacing-lg); 
-            box-shadow: var(--shadow-md); 
-            transition: var(--transition-normal); 
-            border: 1px solid var(--border-light); 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            text-align: center;
-        }
-        .journal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-light);
-        }
-        .journal-icon {
-            width: 80px; 
-            height: 80px; 
-            background: rgba(37, 99, 235, 0.1); 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-size: 2rem; 
-            color: var(--primary-color); 
-            margin-bottom: var(--spacing-md);
-            transition: var(--transition-normal);
-        }
-        .journal-card:hover .journal-icon {
-            background: var(--gradient-primary);
-            color: white;
-            transform: scale(1.1);
-        }
-        .journal-title {
-            font-size: 1.25rem; 
-            font-weight: 700; 
-            color: var(--text-primary); 
-            margin-bottom: var(--spacing-xs);
-        }
-        .journal-publisher {
-            color: var(--text-secondary); 
-            font-size: 0.9rem; 
-            margin-bottom: var(--spacing-md);
-        }
-        .journal-btn {
-            margin-top: auto; 
-            width: 100%; 
-            border-radius: 12px;
-        }
-    </style>
-    <section id="journals" class="journals" style="background-color: var(--bg-secondary); padding: var(--spacing-3xl) 0;">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Editorial & Scientific Activities</span>
-                <h2 class="section-title">Interested Journals</h2>
-            </div>
-            <div class="journal-grid">
-                <!-- Journal 1 -->
-                <div class="journal-card">
-                    <div class="journal-icon">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3 class="journal-title">Mathematical Methods in the Applied Sciences</h3>
-                    <p class="journal-publisher">Wiley Online Library</p>
-                    <a href="https://onlinelibrary.wiley.com/page/journal/10991476/homepage/editorialboard.html" target="_blank" rel="noopener noreferrer" class="btn btn-outline journal-btn">
-                        <span>View Editorial Board</span>
-                    </a>
-                </div>
-
-                <!-- Journal 2 -->
-                <div class="journal-card">
-                    <div class="journal-icon">
-                        <i class="fas fa-chart-area"></i>
-                    </div>
-                    <h3 class="journal-title">Nonlinear Analysis: Modelling and Control</h3>
-                    <p class="journal-publisher">Vilnius University Press</p>
-                    <a href="https://www.journals.vu.lt/nonlinear-analysis" target="_blank" rel="noopener noreferrer" class="btn btn-outline journal-btn">
-                        <span>View Journal</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Research Areas Section -->
     <section id="research" class="research">
         <div class="container">
@@ -1584,6 +1491,62 @@
         </div>
         </div>
     </section>
+
+    <!-- Interested Journals Section (Mini) -->
+    <style>
+        .journals-mini {
+            background-color: var(--bg-primary);
+            padding: var(--spacing-lg) 0;
+            border-top: 1px solid var(--border-light);
+        }
+        .journals-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+        .journals-banner-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: var(--spacing-md);
+        }
+        .journal-mini-link {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--text-primary);
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            background: rgba(37, 99, 235, 0.05);
+            transition: var(--transition-normal);
+            font-size: 0.95rem;
+        }
+        .journal-mini-link:hover {
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+    </style>
+    <div class="journals-mini">
+        <div class="container">
+            <div class="journals-banner">
+                <span class="journals-banner-title">Editorial Activities</span>
+                <a href="https://onlinelibrary.wiley.com/page/journal/10991476/homepage/editorialboard.html" target="_blank" rel="noopener noreferrer" class="journal-mini-link">
+                    <i class="fas fa-book-open"></i> Math Methods in Applied Sciences
+                </a>
+                <a href="https://www.journals.vu.lt/nonlinear-analysis" target="_blank" rel="noopener noreferrer" class="journal-mini-link">
+                    <i class="fas fa-chart-area"></i> Nonlinear Analysis
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
