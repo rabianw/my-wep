@@ -465,6 +465,11 @@
                                 <i class="far fa-calendar" style="color: #64748b;"></i>
                                 February 23-27, 2026
                             </p>
+                            <div class="timeline-gallery">
+                                <img src="assets/seminars/cantho2026_1.jpg" alt="Seminar at Can Tho University" class="gallery-img" onclick="openLightbox(this.src)">
+                                <img src="assets/seminars/cantho2026_2.jpg" alt="Audience at Can Tho University" class="gallery-img" onclick="openLightbox(this.src)">
+                                <img src="assets/seminars/cantho2026_3.jpg" alt="Group Photo at Can Tho University" class="gallery-img" onclick="openLightbox(this.src)">
+                            </div>
                         </div>
                     </div>
                     <!-- 2024 Activities -->
@@ -1596,6 +1601,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
     <script src="script.js"></script>
 </body>

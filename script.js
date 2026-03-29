@@ -389,3 +389,26 @@ function throttle(func, limit = 100) {
         }
     };
 }
+
+// Lightbox functions for image galleries
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    if (lightbox && lightboxImg) {
+        lightbox.style.display = "flex";
+        lightbox.style.alignItems = "center";
+        lightbox.style.justifyContent = "center";
+        lightboxImg.src = src;
+    }
+}
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox) {
+        lightbox.style.display = "none";
+    }
+}
+document.addEventListener('keydown', function(event) {
+    if(event.key === "Escape") {
+        closeLightbox();
+    }
+});
