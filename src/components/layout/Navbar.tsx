@@ -15,8 +15,8 @@ const navigation = [
   { name: "Conferences", href: "/conferences" },
   { name: "Achievements", href: "/achievements" },
   { name: "Gallery", href: "/gallery" },
-  { name: "Team", href: "/collaborators" },
   { name: "Contact", href: "/contact" },
+  { name: "DeepMathAI Group", href: "https://deepmathai.vercel.app" },
 ];
 
 export function Navbar() {
@@ -43,14 +43,31 @@ export function Navbar() {
         </div>
         <div className="hidden lg:flex lg:gap-x-6 xl:gap-x-8">
           {navigation.map((item) => {
-            const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/');
+            const isExternal = item.href.startsWith("http");
+            const isActive = !isExternal && (pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/'));
+            const linkClassName = `text-sm font-semibold leading-6 transition-colors ${
+              isActive ? "text-primary" : "text-foreground hover:text-primary-light"
+            }`;
+
+            if (isExternal) {
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClassName}
+                >
+                  {item.name}
+                </a>
+              );
+            }
+
             return (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-semibold leading-6 transition-colors ${
-                  isActive ? "text-primary" : "text-foreground hover:text-primary-light"
-                }`}
+                className={linkClassName}
               >
                 {item.name}
               </Link>
@@ -63,16 +80,34 @@ export function Navbar() {
         <div className="lg:hidden">
           <div className="space-y-1 px-4 pb-3 pt-2 bg-surface border-b border-border shadow-lg">
             {navigation.map((item) => {
-              const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/');
+              const isExternal = item.href.startsWith("http");
+              const isActive = !isExternal && (pathname === item.href || (pathname.startsWith(item.href) && item.href !== '/'));
+              const linkClassName = `block rounded-md px-3 py-2 text-base font-medium ${
+                isActive
+                  ? "bg-primary/10 text-primary"
+                  : "text-foreground hover:bg-muted/10"
+              }`;
+
+              if (isExternal) {
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClassName}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                );
+              }
+
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`block rounded-md px-3 py-2 text-base font-medium ${
-                    isActive
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground hover:bg-muted/10"
-                  }`}
+                  className={linkClassName}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
