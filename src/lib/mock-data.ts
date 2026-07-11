@@ -70,6 +70,16 @@ export const researchAreasData: ResearchArea[] = [
 
 export const publicationsData: Publication[] = [
   {
+    id: "pub-2026-9",
+    title: "Compact Gradient-Based Neural Network for Stochastic Support Vector Regression with Probabilistic Constraints",
+    authors: "Tananimit, N., Grace, T., Belay, Y. A., & Wangkeeree, R.",
+    journal: "Journal of Nonlinear and Variational Analysis",
+    date: "2026",
+    doi: "JNVA-2026042701",
+    link: "https://jnva.biemdas.com/archives/category/volume-10-issue-4",
+    featured: true,
+  },
+  {
     id: "pub-2026-cjm-111333",
     title: "Multi-view Laplacian twin support vector machine with pinball loss function",
     authors: "Vipavee Damminsed & Rabian Wangkeeree",

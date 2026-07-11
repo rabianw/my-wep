@@ -49,7 +49,7 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-12 p-6 bg-surface border border-border rounded-2xl">
-              <h3 className="font-bold text-foreground mb-4">Editorial Board Member</h3>
+              <h3 className="font-bold text-foreground mb-4">Interesting Journals</h3>
               <ul className="space-y-2 text-sm">
                 {contactData.journals.map((j, i) => (
                   <li key={i}>
