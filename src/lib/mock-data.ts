@@ -70,6 +70,15 @@ export const researchAreasData: ResearchArea[] = [
 
 export const publicationsData: Publication[] = [
   {
+    id: "pub-2026-diag-4417092",
+    title: "An Anatomically Guided and Optimization-Refined Radiomics Framework for Opportunistic Osteoporosis Assessment from Lumbar Spine MRI",
+    authors: "Mahatthanatrakul, A., Klinsuwan, T., Wangkeeree, R., & Laoruengthana, A.",
+    journal: "Diagnostics (MDPI) — Accepted, In Press",
+    date: "2026",
+    link: "https://www.mdpi.com/journal/diagnostics",
+    featured: true,
+  },
+  {
     id: "pub-2026-9",
     title: "Compact Gradient-Based Neural Network for Stochastic Support Vector Regression with Probabilistic Constraints",
     authors: "Tananimit, N., Grace, T., Belay, Y. A., & Wangkeeree, R.",
