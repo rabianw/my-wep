@@ -7,7 +7,7 @@ export function Footer() {
   return (
     <footer className="bg-secondary text-surface py-12 mt-auto">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">{profileData.name}</h3>
             <p className="text-muted text-sm mb-4">
@@ -37,7 +37,16 @@ export function Footer() {
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
-          
+
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-white">DeepMathAI Network</h3>
+            <ul className="space-y-2 text-sm text-muted">
+              <li><a href="https://deepmathai.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">DeepMathAI Group</a></li>
+              <li><a href="https://glaucoma.deepmathai.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Glaucoma Screening App</a></li>
+              <li><a href="https://osteoporosis.deepmathai.ai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Osteoporosis Screening App</a></li>
+            </ul>
+          </div>
+
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
             <address className="not-italic text-sm text-muted space-y-2">
