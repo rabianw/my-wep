@@ -16,7 +16,7 @@ const navigation = [
   { name: "Achievements", href: "/achievements" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact", href: "/contact" },
-  { name: "DeepMathAI Group", href: "https://deepmathai.vercel.app" },
+  { name: "DeepMathAI Group", href: "https://deepmathai.ai" },
 ];
 
 export function Navbar() {
