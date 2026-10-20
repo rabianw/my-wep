@@ -1797,6 +1797,14 @@ export const conferencesData: Conference[] = [
     "location": "See description",
     "date": "2025",
     "featured": false
+  },
+  {
+    "id": "conf-2026-44",
+    "title": "Support Vector Machines with Epigraph Reformulated Generalized Pinball Loss Function",
+    "description": "International Conference on Optimization and Machine Learning (ICOML 2026), National Taiwan Normal University, Taipei, Taiwan, July 27–29, 2026 (Invited Speaker)",
+    "location": "See description",
+    "date": "2026",
+    "featured": false
   }
 ];
 

@@ -1,7 +1,18 @@
 import { conferencesData } from "@/lib/mock-data";
 import { Presentation, MapPin, Calendar, ExternalLink, GraduationCap, Globe, BookOpen } from "lucide-react";
 
-const featuredConferences = [
+type FeaturedConference = {
+  id: string;
+  shortName: string;
+  fullName: string;
+  date: string;
+  location: string;
+  link: string;
+  status: string;
+  iconName: string;
+};
+
+const recentConferences: FeaturedConference[] = [
   {
     id: "fc-acdl-2026",
     shortName: "ACDL 2026",
@@ -9,7 +20,7 @@ const featuredConferences = [
     date: "June 8-12, 2026",
     location: "Certosa di Pontignano, Siena, Italy",
     link: "https://acdl2026.icas.events",
-    status: "Attending",
+    status: "Attended",
     iconName: "graduationCap",
   },
   {
@@ -19,7 +30,7 @@ const featuredConferences = [
     date: "July 1-2, 2026",
     location: "Online (Selçuk University, Turkey)",
     link: "https://iccma2026.selcuk.edu.tr",
-    status: "Attending",
+    status: "Attended",
     iconName: "presentation",
   },
   {
@@ -29,7 +40,7 @@ const featuredConferences = [
     date: "July 2-9, 2026",
     location: "Rota, Cádiz, Spain",
     link: "https://cmmse.usal.es/cmmse2026/welcome",
-    status: "Attending",
+    status: "Attended",
     iconName: "bookOpen",
   },
   {
@@ -42,6 +53,9 @@ const featuredConferences = [
     status: "Invited Speaker",
     iconName: "globe",
   },
+];
+
+const upcomingConferences: FeaturedConference[] = [
   {
     id: "fc-icnaao-2026",
     shortName: "ICNAAO 2026",
@@ -73,6 +87,51 @@ function getIcon(iconName: string) {
   }
 }
 
+function FeaturedCard({ fc, past }: { fc: FeaturedConference; past?: boolean }) {
+  return (
+    <a
+      href={fc.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group bg-surface border border-border rounded-2xl p-6 text-center hover:border-primary/40 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+    >
+      {/* Status Badge */}
+      <div className="mb-4">
+        <span className={`inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full ${past ? "bg-slate-100 text-slate-600" : "bg-emerald-100 text-emerald-700"}`}>
+          {fc.status}
+        </span>
+      </div>
+
+      {/* Icon */}
+      <div className="w-14 h-14 mx-auto mb-5 bg-primary/10 text-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+        {getIcon(fc.iconName)}
+      </div>
+
+      {/* Conference Name */}
+      <h3 className="text-xl font-extrabold text-foreground mb-2">{fc.shortName}</h3>
+      <p className="text-sm text-muted leading-snug mb-4">{fc.fullName}</p>
+
+      {/* Date & Location */}
+      <div className="space-y-1.5">
+        <div className="flex items-center justify-center gap-1.5 text-sm text-primary font-medium">
+          <Calendar size={14} />
+          <span>{fc.date}</span>
+        </div>
+        <div className="flex items-center justify-center gap-1.5 text-xs text-muted">
+          <MapPin size={12} />
+          <span>{fc.location}</span>
+        </div>
+      </div>
+
+      {/* View link */}
+      <div className="mt-4 flex items-center justify-center gap-1 text-xs text-primary/70 group-hover:text-primary transition-colors">
+        <ExternalLink size={12} />
+        <span>View Conference</span>
+      </div>
+    </a>
+  );
+}
+
 export default function ConferencesPage() {
   // Group past conferences by year
   const conferencesByYear: Record<string, typeof conferencesData> = {};
@@ -89,60 +148,30 @@ export default function ConferencesPage() {
     <div className="py-20 bg-background min-h-screen">
       <div className="mx-auto max-w-6xl px-4 lg:px-8">
 
-        {/* Featured Conferences Section */}
+        {/* Upcoming Conferences Section */}
         <header className="mb-12 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">International Engagement</p>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4">Featured Conferences</h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4">Upcoming Conferences</h1>
           <p className="text-lg text-muted max-w-2xl mx-auto">
-            Invited speaker roles at leading international conferences in optimization and machine learning
+            Upcoming invited talks and participation at international conferences in nonlinear analysis and optimization
           </p>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
-          {featuredConferences.map((fc) => (
-            <a
-              key={fc.id}
-              href={fc.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-surface border border-border rounded-2xl p-6 text-center hover:border-primary/40 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
-            >
-              {/* Status Badge */}
-              <div className="mb-4">
-                <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 rounded-full">
-                  {fc.status}
-                </span>
-              </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-24">
+          {upcomingConferences.map((fc) => (
+            <FeaturedCard key={fc.id} fc={fc} />
+          ))}
+        </div>
 
-              {/* Icon */}
-              <div className="w-14 h-14 mx-auto mb-5 bg-primary/10 text-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                {getIcon(fc.iconName)}
-              </div>
+        {/* Recent Conferences Section */}
+        <div className="mb-12 text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">2026</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mb-4">Recent Conferences</h2>
+        </div>
 
-              {/* Conference Name */}
-              <h3 className="text-xl font-extrabold text-foreground mb-2">{fc.shortName}</h3>
-              <p className="text-sm text-muted leading-snug mb-4">{fc.fullName}</p>
-
-              {/* Date & Location */}
-              <div className="space-y-1.5">
-                <div className="flex items-center justify-center gap-1.5 text-sm text-primary font-medium">
-                  <Calendar size={14} />
-                  <span>{fc.date}</span>
-                </div>
-                {"location" in fc && fc.location && (
-                  <div className="flex items-center justify-center gap-1.5 text-xs text-muted">
-                    <MapPin size={12} />
-                    <span>{fc.location}</span>
-                  </div>
-                )}
-              </div>
-
-              {/* View link */}
-              <div className="mt-4 flex items-center justify-center gap-1 text-xs text-primary/70 group-hover:text-primary transition-colors">
-                <ExternalLink size={12} />
-                <span>View Conference</span>
-              </div>
-            </a>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+          {recentConferences.map((fc) => (
+            <FeaturedCard key={fc.id} fc={fc} past />
           ))}
         </div>
 
@@ -153,7 +182,7 @@ export default function ConferencesPage() {
             40+ International Conference Presentations
           </h2>
           <p className="text-lg text-muted max-w-2xl mx-auto">
-            Across Asia, Europe, and America (2005–2025)
+            Across Asia, Europe, and America (2005–2026)
           </p>
         </div>
 
