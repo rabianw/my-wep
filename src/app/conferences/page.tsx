@@ -7,12 +7,21 @@ type FeaturedConference = {
   fullName: string;
   date: string;
   location: string;
-  link: string;
+  link?: string;
   status: string;
   iconName: string;
 };
 
 const recentConferences: FeaturedConference[] = [
+  {
+    id: "fc-amm-2026",
+    shortName: "AMM 2026",
+    fullName: "30th Annual Meeting in Mathematics & CNA 2026 (International Session on Nonlinear and Convex Analysis)",
+    date: "May 28-30, 2026",
+    location: "Khon Kaen University, Thailand",
+    status: "Speaker",
+    iconName: "presentation",
+  },
   {
     id: "fc-acdl-2026",
     shortName: "ACDL 2026",
@@ -28,19 +37,19 @@ const recentConferences: FeaturedConference[] = [
     shortName: "ICCMA 2026",
     fullName: "4th International Conference: Constructive Mathematical Analysis",
     date: "July 1-2, 2026",
-    location: "Online (Selçuk University, Turkey)",
+    location: "Online (Selçuk University, Türkiye)",
     link: "https://iccma2026.selcuk.edu.tr",
-    status: "Attended",
+    status: "Speaker",
     iconName: "presentation",
   },
   {
     id: "fc-cmmse-2026",
-    shortName: "CMMSE 2026",
+    shortName: "CMMSE & CHPC 2026",
     fullName: "Computational and Mathematical Methods in Science and Engineering",
     date: "July 2-9, 2026",
-    location: "Rota, Cádiz, Spain",
+    location: "Costa Ballena, Cádiz, Spain",
     link: "https://cmmse.usal.es/cmmse2026/welcome",
-    status: "Attended",
+    status: "Speaker",
     iconName: "bookOpen",
   },
   {
@@ -88,11 +97,10 @@ function getIcon(iconName: string) {
 }
 
 function FeaturedCard({ fc, past }: { fc: FeaturedConference; past?: boolean }) {
+  const Card = fc.link ? "a" : "div";
   return (
-    <a
-      href={fc.link}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Card
+      {...(fc.link ? { href: fc.link, target: "_blank", rel: "noopener noreferrer" } : {})}
       className="group bg-surface border border-border rounded-2xl p-6 text-center hover:border-primary/40 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
     >
       {/* Status Badge */}
@@ -124,11 +132,13 @@ function FeaturedCard({ fc, past }: { fc: FeaturedConference; past?: boolean }) 
       </div>
 
       {/* View link */}
-      <div className="mt-4 flex items-center justify-center gap-1 text-xs text-primary/70 group-hover:text-primary transition-colors">
-        <ExternalLink size={12} />
-        <span>View Conference</span>
-      </div>
-    </a>
+      {fc.link && (
+        <div className="mt-4 flex items-center justify-center gap-1 text-xs text-primary/70 group-hover:text-primary transition-colors">
+          <ExternalLink size={12} />
+          <span>View Conference</span>
+        </div>
+      )}
+    </Card>
   );
 }
 
@@ -169,7 +179,7 @@ export default function ConferencesPage() {
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mb-4">Recent Conferences</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
           {recentConferences.map((fc) => (
             <FeaturedCard key={fc.id} fc={fc} past />
           ))}

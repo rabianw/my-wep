@@ -1800,8 +1800,32 @@ export const conferencesData: Conference[] = [
   },
   {
     "id": "conf-2026-44",
-    "title": "Support Vector Machines with Epigraph Reformulated Generalized Pinball Loss Function",
-    "description": "International Conference on Optimization and Machine Learning (ICOML 2026), National Taiwan Normal University, Taipei, Taiwan, July 27–29, 2026 (Invited Speaker)",
+    "title": "Optimization and Dynamical Perspectives in Machine Learning Algorithm Design: Application to Osteoporosis Classification from Lumbar Spine MRI",
+    "description": "The 30th Annual Meeting in Mathematics (AMM 2026) & Conference in Number Theory and Applications (CNA 2026), International Session on Nonlinear and Convex Analysis, Khon Kaen University, Thailand, May 28–30, 2026",
+    "location": "See description",
+    "date": "2026",
+    "featured": false
+  },
+  {
+    "id": "conf-2026-45",
+    "title": "A Gradient-Based Neurodynamic Model for Circular Cone Constrained Variational Inequalities",
+    "description": "The 4th International Conference on Constructive Mathematical Analysis (ICCMA 2026), Online, July 1–2, 2026",
+    "location": "See description",
+    "date": "2026",
+    "featured": false
+  },
+  {
+    "id": "conf-2026-46",
+    "title": "A Neurodynamic Framework for Generalized Pinball-Loss SVMs: Admissible Smoothings, Provable Convergence, and an MRI Bone-Density Application",
+    "description": "Computational and Mathematical Methods in Science and Engineering (CMMSE & CHPC 2026), Costa Ballena, Cádiz, Spain, July 2–9, 2026",
+    "location": "See description",
+    "date": "2026",
+    "featured": false
+  },
+  {
+    "id": "conf-2026-47",
+    "title": "A Neurodynamical Neural Network Approach for Solving Support Vector Machine Problems with Generalized Pinball Loss via Hyperbolic Tangent Smoothing",
+    "description": "International Conference on Optimization and Machine Learning (ICOML 2026), National Taiwan Normal University, Taipei, Taiwan, July 29, 2026 (Invited Speaker)",
     "location": "See description",
     "date": "2026",
     "featured": false
