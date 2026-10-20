@@ -42,6 +42,26 @@ const featuredConferences = [
     status: "Invited Speaker",
     iconName: "globe",
   },
+  {
+    id: "fc-icnaao-2026",
+    shortName: "ICNAAO 2026",
+    fullName: "6th International Conference on Nonlinear Applied Analysis and Optimization",
+    date: "December 14-16, 2026",
+    location: "KMUTT, Bangkok, Thailand",
+    link: "https://icnaao2026.github.io/",
+    status: "Attending",
+    iconName: "bookOpen",
+  },
+  {
+    id: "fc-icwana-2027",
+    shortName: "ICWANA 2027",
+    fullName: "5th International Conference and Workshop on Applied Nonlinear Analysis",
+    date: "July 28-31, 2027",
+    location: "Pattaya Beach, Chonburi, Thailand",
+    link: "https://icwana2027.github.io/#speakers",
+    status: "Invited Speaker",
+    iconName: "globe",
+  },
 ];
 
 function getIcon(iconName: string) {
@@ -78,7 +98,7 @@ export default function ConferencesPage() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
           {featuredConferences.map((fc) => (
             <a
               key={fc.id}
