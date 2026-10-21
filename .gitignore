@@ -41,3 +41,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 deepmathai-web/
+
+# Confidential model package (deployed separately to Cloud Run) — never commit
+FundusScreeningAssistant*/
