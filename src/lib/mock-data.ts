@@ -70,6 +70,33 @@ export const researchAreasData: ResearchArea[] = [
 
 export const publicationsData: Publication[] = [
   {
+    id: "pub-2026-4",
+    title: "Continuity and Lipschitz Properties of Approximate Weak Solution Maps via Nonlinear Scalarization",
+    authors: "Pakkapon Preechasilp & Rabian Wangkeeree",
+    journal: "Carpathian Journal of Mathematics, Vol. 43, No. 1, pp. 69–91",
+    date: "2027",
+    link: "https://www.carpathian.cunbm.utcluj.ro/wp-content/uploads/carpathian_2027_43_1_69-91.pdf",
+    featured: true,
+  },
+  {
+    id: "pub-2026-cjm-111333",
+    title: "Multi-view Laplacian twin support vector machine with pinball loss function",
+    authors: "Vipavee Damminsed & Rabian Wangkeeree",
+    journal: "Carpathian Journal of Mathematics, Vol. 43, No. 1, pp. 139–165",
+    date: "2027",
+    link: "https://www.carpathian.cunbm.utcluj.ro/wp-content/uploads/carpathian_2027_43_1_139-165.pdf",
+    featured: true,
+  },
+  {
+    id: "pub-2027-cjm-233-248",
+    title: "Fixed-Time Stability and Noise Robustness of a Polynomial-Gain Gradient Neural Network for Absolute Value Equations",
+    authors: "Thanatporn Grace, Nutt Tananimit, Yirga Abebe Belay, & Rabian Wangkeeree",
+    journal: "Carpathian Journal of Mathematics, Vol. 43, No. 1, pp. 233–248",
+    date: "2027",
+    link: "https://www.carpathian.cunbm.utcluj.ro/wp-content/uploads/abstract_carpathian_2027_43_1_233-248.pdf",
+    featured: true,
+  },
+  {
     id: "pub-2026-diag-4417092",
     title: "An Anatomically Guided and Optimization-Refined Radiomics Framework for Opportunistic Osteoporosis Assessment from Lumbar Spine MRI",
     authors: "Mahatthanatrakul, A., Klinsuwan, T., Wangkeeree, R., & Laoruengthana, A.",
@@ -86,15 +113,6 @@ export const publicationsData: Publication[] = [
     date: "2026",
     doi: "JNVA-2026042701",
     link: "https://jnva.biemdas.com/archives/category/volume-10-issue-4",
-    featured: true,
-  },
-  {
-    id: "pub-2026-cjm-111333",
-    title: "Multi-view Laplacian twin support vector machine with pinball loss function",
-    authors: "Vipavee Damminsed & Rabian Wangkeeree",
-    journal: "Carpathian Journal of Mathematics — Accepted, In Press",
-    date: "2026",
-    link: "https://www.carpathian.cunbm.utcluj.ro/all-issues-archive/",
     featured: true,
   },
   {
@@ -144,14 +162,6 @@ export const publicationsData: Publication[] = [
     date: "2026",
     doi: "10.1109/ACCESS.2026.3679347",
     link: "https://ieeexplore.ieee.org/document/11458726",
-    featured: true,
-  },
-  {
-    id: "pub-2026-4",
-    title: "Continuity and Lipschitz Properties of Approximate Weak Solution Maps via Nonlinear Scalarization",
-    authors: "Preechasilp, P. & Wangkeeree, R.",
-    journal: "Carpathian Journal of Mathematics, Issue 4/2026 — Accepted, In Press (Special Issue: AMC-2025)",
-    date: "2026",
     featured: true,
   },
   {
