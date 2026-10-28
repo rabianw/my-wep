@@ -97,6 +97,16 @@ export const publicationsData: Publication[] = [
     featured: true,
   },
   {
+    id: "pub-2026-sym-1793",
+    title: "A Parallel Moving Point Projection Algorithm for Generalized Split Convex Feasibility Problems with Applications to Image Restoration",
+    authors: "Thammasiri, P., Ungchittrakool, K., Plubtieng, S., & Wangkeeree, R.",
+    journal: "Symmetry (MDPI), Vol. 18, Issue 11, 1793",
+    date: "2026",
+    doi: "10.3390/sym18111793",
+    link: "https://www.mdpi.com/2073-8994/18/11/1793",
+    featured: true,
+  },
+  {
     id: "pub-2026-diag-4417092",
     title: "An Anatomically Guided and Optimization-Refined Radiomics Framework for Opportunistic Osteoporosis Assessment from Lumbar Spine MRI",
     authors: "Mahatthanatrakul, A., Klinsuwan, T., Wangkeeree, R., & Laoruengthana, A.",
